@@ -14,9 +14,7 @@ namespace Wordle
         static void Main(string[] args)
         {
             string[] words = { "angel", "anima", "artic", "atoms", "audio", "camio", "cants", "civil", "decim", "delta", "digit", "dogma", "dolor", "gelat", "liceu", "licor", "local", "octal", "ocult", "orbes"};
-            //Console.WriteLine(word[19]);
-            //string wordle = word[19];
-            //Console.WriteLine($"\n\n\n{wordle[2]}");
+            
 
             Random rnd = new Random();
             int rnum = rnd.Next(0, 1);
@@ -59,8 +57,15 @@ namespace Wordle
                     }
                     else
                     {
-                        Console.ForegroundColor = ConsoleColor.White;
+                        for (int k = 0; k < wordle.GetLength(1); k++)
+                        {
+                            if (Convert.ToChar(wordle[i, j]) != word[k])
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkGray;
+                            }
+                        }
                         Console.Write(" " + wordle[i, j]);
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
 
 
