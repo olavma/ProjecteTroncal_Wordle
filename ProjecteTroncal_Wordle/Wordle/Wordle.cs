@@ -19,7 +19,7 @@ namespace Wordle
             //Console.WriteLine($"\n\n\n{wordle[2]}");
 
             Random rnd = new Random();
-            int rnum = rnd.Next(0, 20);
+            int rnum = rnd.Next(0, 1);
             string word = words[rnum];
 
             string[,] wordle = new string[5, 5];
@@ -47,10 +47,30 @@ namespace Wordle
                     wordle[i, j] = Convert.ToString(wordUser[j]);
                 }
 
+                int cont = 0;
+
                 for(int j = 0; j < wordle.GetLength(1); j++)
                 {
-                    Console.Write(" " + wordle[i, j]);
+                    if (Convert.ToChar(wordle[i, j]) == word[j])
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(" " + wordle[i, j]);
+                        cont++;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write(" " + wordle[i, j]);
+                    }
+
+
+                    if (cont == 5)
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Environment.Exit(0);
+                    }
                 }
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine();
 
             }
