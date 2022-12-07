@@ -102,16 +102,18 @@ namespace Wordle
 
 
 
+            //// Mostrem la matriu entera per si hem fallat
+            //for (int rowShow = 0; rowShow < wordle.GetLength(0); rowShow++)
+            //{
+            //    for (int colShow = 0; colShow < wordle.GetLength(1); colShow++)
+            //    {
+            //        Console.Write(" " + wordle[rowShow, colShow]);
 
-            for (int rowShow = 0; rowShow < wordle.GetLength(0); rowShow++)
-            {
-                for (int colShow = 0; colShow < wordle.GetLength(1); colShow++)
-                {
-                    Console.Write(" " + wordle[rowShow, colShow]);
+            //    }
+            //    Console.WriteLine();
+            //}
 
-                }
-                Console.WriteLine();
-            }
+            Console.WriteLine($"Resposta correcta {word}");
 
         }
     }
