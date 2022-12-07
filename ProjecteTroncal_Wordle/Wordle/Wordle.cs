@@ -81,6 +81,15 @@ namespace Wordle
                                 Console.ForegroundColor = ConsoleColor.DarkGray;
                             }
                         }
+
+                        for(int k = 0; k < wordle.GetLength(1); k++)
+                        {
+                            if (Convert.ToChar(wordle[i, j]) == word[k])
+                            {
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                            }
+                        }
+
                         Console.Write(" " + wordle[i, j]);
                         Console.ForegroundColor = ConsoleColor.White;
                     }
