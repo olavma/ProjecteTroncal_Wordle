@@ -149,6 +149,8 @@ namespace Wordle
                         }
 
                         Console.ForegroundColor = ConsoleColor.White;
+
+                        // Degut a que s'ha acertat la paraula es tanca el programa amb aquesta ordre
                         Environment.Exit(0);
                     }
                 }
