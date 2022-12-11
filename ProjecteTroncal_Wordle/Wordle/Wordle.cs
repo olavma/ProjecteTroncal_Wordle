@@ -18,7 +18,7 @@ namespace Wordle
             
             // Generem un numero aleatori i guardem la paraula a la que correspon aquest numero per poder comparar durant el joc.
             Random rnd = new Random();
-            int rnum = rnd.Next(0, 21);
+            int rnum = rnd.Next(0, 20);
             string word = words[rnum];
 
             // Creem la matriu del wordle
