@@ -16,11 +16,10 @@ namespace Wordle
             // Array de paraules
             string[] words = { "angel", "anima", "artic", "atoms", "audio", "camio", "cants", "civil", "decim", "delta", "digit", "dogma", "dolor", "gelat", "liceu", "licor", "local", "octal", "ocult", "orbes"};
             
-            // Generem un numero aleatorio i guardem la paraula a la que correspon aquest numero per poder comparar.
+            // Generem un numero aleatori i guardem la paraula a la que correspon aquest numero per poder comparar durant el joc.
             Random rnd = new Random();
-            int rnum = rnd.Next(0, 1);
+            int rnum = rnd.Next(0, 21);
             string word = words[rnum];
-
 
             // Creem la matriu del wordle
             string[,] wordle = new string[5, 5];
@@ -44,7 +43,7 @@ namespace Wordle
                 string wordUser = Console.ReadLine();
                 
                 //Es comprova si compleix els requisits
-                while(wordUser.Length > 5 || wordUser.Length < 0)
+                while(wordUser.Length != 5)
                 {
                     Console.WriteLine("T'has equivocat amb el tamany de la paraula");
                     Console.WriteLine("Escriu una paraula: ");
@@ -71,9 +70,12 @@ namespace Wordle
                         Console.Write(" " + wordle[i, j]);
                         lettersGreen++;
                     }
-                    // Si no coincideix es comprova si la lletra existeix en la paraula secreta. Si no existeix la pintara de Gris Fosc
+                    // Si no es comproven si les lletres es troben o no dins de la paraula
                     else
                     {
+                        /* Primer es comprova si alguna de les lletras de la paraula de l'usuari no existeix en la paraula aleatoria. 
+                         * Aquesta lletra que no existeix es pinta de color Gris Fosc.
+                        */
                         for (int k = 0; k < wordle.GetLength(1); k++)
                         {
                             if (Convert.ToChar(wordle[i, j]) != word[k])
@@ -82,6 +84,9 @@ namespace Wordle
                             }
                         }
 
+                        /* Despres es comprova si alguna lletra de la paraula de l'usuari existeix en la paraula aleatoria pero es troba en un altre lloc.
+                         * Aquesta lletra en diferent posicio es pinta de color Groc.
+                         */ 
                         for(int k = 0; k < wordle.GetLength(1); k++)
                         {
                             if (Convert.ToChar(wordle[i, j]) == word[k])
@@ -94,9 +99,55 @@ namespace Wordle
                         Console.ForegroundColor = ConsoleColor.White;
                     }
 
-                    // Si el contador de lletres en verd es igual a cinc. El programa es tanca indicant que hem acertat la paraula
+                    /* Si el contador de lletres en verd es igual a cinc. El programa es tanca indicant que hem acertat la paraula
+                     * I mostra la matriu del joc amb les lletres pintades de forma correcta 
+                     */ 
                     if (lettersGreen == 5)
                     {
+                        Console.Clear();
+
+                        for (int rowShow = 0; rowShow < wordle.GetLength(0); rowShow++)
+                        {
+                            for (int colShow = 0; colShow < wordle.GetLength(1); colShow++)
+                            {
+                                if (Convert.ToChar(wordle[rowShow, colShow]) == word[colShow])
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.Write(" " + wordle[rowShow, colShow]);
+                                }
+                                // Si no es comproven si les lletres es troben o no dins de la paraula
+                                else
+                                {
+                                    /* Primer es comprova si alguna de les lletras de la paraula de l'usuari no existeix en la paraula aleatoria. 
+                                     * Aquesta lletra que no existeix es pinta de color Gris Fosc.
+                                    */
+                                    for (int k = 0; k < wordle.GetLength(1); k++)
+                                    {
+                                        if (Convert.ToChar(wordle[rowShow, colShow]) != word[k])
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.DarkGray;
+                                        }
+                                    }
+
+                                    /* Despres es comprova si alguna lletra de la paraula de l'usuari existeix en la paraula aleatoria pero es troba en un altre lloc.
+                                     * Aquesta lletra en diferent posicio es pinta de color Groc.
+                                     */
+                                    for (int k = 0; k < wordle.GetLength(1); k++)
+                                    {
+                                        if (Convert.ToChar(wordle[rowShow, colShow]) == word[k])
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Yellow;
+                                        }
+                                    }
+
+                                    Console.Write(" " + wordle[rowShow, colShow]);
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                }
+
+                            }
+                            Console.WriteLine();
+                        }
+
                         Console.ForegroundColor = ConsoleColor.White;
                         Environment.Exit(0);
                     }
@@ -108,21 +159,55 @@ namespace Wordle
 
 
 
+            Console.Clear();
 
+            // Mostrem la matriu entera per si hem fallat
+            for (int rowShow = 0; rowShow < wordle.GetLength(0); rowShow++)
+            {
+                for (int colShow = 0; colShow < wordle.GetLength(1); colShow++)
+                {
+                    if (Convert.ToChar(wordle[rowShow, colShow]) == word[colShow])
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(" " + wordle[rowShow, colShow]);
+                    }
+                    // Si no es comproven si les lletres es troben o no dins de la paraula
+                    else
+                    {
+                        /* Primer es comprova si alguna de les lletras de la paraula de l'usuari no existeix en la paraula aleatoria. 
+                         * Aquesta lletra que no existeix es pinta de color Gris Fosc.
+                        */
+                        for (int k = 0; k < wordle.GetLength(1); k++)
+                        {
+                            if (Convert.ToChar(wordle[rowShow, colShow]) != word[k])
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkGray;
+                            }
+                        }
 
+                        /* Despres es comprova si alguna lletra de la paraula de l'usuari existeix en la paraula aleatoria pero es troba en un altre lloc.
+                         * Aquesta lletra en diferent posicio es pinta de color Groc.
+                         */
+                        for (int k = 0; k < wordle.GetLength(1); k++)
+                        {
+                            if (Convert.ToChar(wordle[rowShow, colShow]) == word[k])
+                            {
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                            }
+                        }
 
-            //// Mostrem la matriu entera per si hem fallat
-            //for (int rowShow = 0; rowShow < wordle.GetLength(0); rowShow++)
-            //{
-            //    for (int colShow = 0; colShow < wordle.GetLength(1); colShow++)
-            //    {
-            //        Console.Write(" " + wordle[rowShow, colShow]);
+                        Console.Write(" " + wordle[rowShow, colShow]);
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
 
-            //    }
-            //    Console.WriteLine();
-            //}
+                }
+                Console.WriteLine();
+            }
 
-            Console.WriteLine($"Resposta correcta {word}");
+            Console.Write("Resposta correcta: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(word);
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
     }

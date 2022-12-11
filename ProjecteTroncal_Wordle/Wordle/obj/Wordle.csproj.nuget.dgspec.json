@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ITB\\DAMv1\\M3\\DADES\\empty2\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {}
+    "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {}
   },
   "projects": {
-    "E:\\ITB\\DAMv1\\M3\\DADES\\empty2\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {
+    "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITB\\DAMv1\\M3\\DADES\\empty2\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
+        "projectUniqueName": "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
         "projectName": "Wordle",
-        "projectPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty2\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
-        "packagesPath": "C:\\Users\\argo\\.nuget\\packages\\",
-        "outputPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty2\\ProjecteTroncal_Wordle\\Wordle\\obj\\",
+        "projectPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
+        "packagesPath": "C:\\Users\\VireN\\.nuget\\packages\\",
+        "outputPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\argo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VireN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -45,7 +49,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
