@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {}
+    "E:\\ITB\\DAMv1\\M3\\DADES\\empty4\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {}
   },
   "projects": {
-    "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {
+    "E:\\ITB\\DAMv1\\M3\\DADES\\empty4\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
+        "projectUniqueName": "E:\\ITB\\DAMv1\\M3\\DADES\\empty4\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
         "projectName": "Wordle",
-        "projectPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
+        "projectPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty4\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
         "packagesPath": "C:\\Users\\VireN\\.nuget\\packages\\",
-        "outputPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty3\\ProjecteTroncal_Wordle\\Wordle\\obj\\",
+        "outputPath": "E:\\ITB\\DAMv1\\M3\\DADES\\empty4\\ProjecteTroncal_Wordle\\Wordle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

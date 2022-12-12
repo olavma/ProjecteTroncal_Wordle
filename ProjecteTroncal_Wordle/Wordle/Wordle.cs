@@ -14,22 +14,22 @@ namespace Wordle
         static void Main(string[] args)
         {
             // Array de paraules
-            string[] words = { "angel", "anima", "artic", "atoms", "audio", "camio", "cants", "civil", "decim", "delta", "digit", "dogma", "dolor", "gelat", "liceu", "licor", "local", "octal", "ocult", "orbes"};
+            string[] words = { "angel", "anima", "artic", "atoms", "audio", "camio", "cants", "civil", "decim", "delta", "digit", "dogma", "dolor", "gelat", "inici", "liceu", "licor", "local", "octal", "ocult", "orbes"};
             
             // Generem un numero aleatori i guardem la paraula a la que correspon aquest numero per poder comparar durant el joc.
             Random rnd = new Random();
-            int rnum = rnd.Next(0, 20);
+            int rnum = rnd.Next(0, 21);
             string word = words[rnum];
 
             // Creem la matriu del wordle
-            string[,] wordle = new string[5, 5];
+            string[,] wordle = new string[6, 5];
 
             // La omplim d'x per a que tingui contingut
             for(int i = 0; i < wordle.GetLength(0); i++)
             {
                 for(int j = 0; j < wordle.GetLength(1); j++)
                 {
-                    wordle[i, j] = "x";
+                    wordle[i, j] = " ";
                 }
             }
 
