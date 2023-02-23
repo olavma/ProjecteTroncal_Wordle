@@ -68,3 +68,17 @@ E:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\W
 E:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.dll
 E:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.pdb
 E:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.genruntimeconfig.cache
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.exe
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.deps.json
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.runtimeconfig.json
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.runtimeconfig.dev.json
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.dll
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.pdb
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.csproj.AssemblyReference.cache
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.GeneratedMSBuildEditorConfig.editorconfig
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.AssemblyInfoInputs.cache
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.AssemblyInfo.cs
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.csproj.CoreCompileInputs.cache
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.dll
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.pdb
+F:\ITB\DAMv1\M3\GitLab\3\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.genruntimeconfig.cache

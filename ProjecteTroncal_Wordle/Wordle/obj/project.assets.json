@@ -8,26 +8,27 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\VireN\\.nuget\\packages\\": {}
+    "C:\\Users\\argo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ITB\\DAMv1\\M3\\GitLab\\3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
+      "projectUniqueName": "F:\\ITB\\DAMv1\\M3\\GitLab\\3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
       "projectName": "Wordle",
-      "projectPath": "E:\\ITB\\DAMv1\\M3\\GitLab\\3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
-      "packagesPath": "C:\\Users\\VireN\\.nuget\\packages\\",
-      "outputPath": "E:\\ITB\\DAMv1\\M3\\GitLab\\3\\ProjecteTroncal_Wordle\\Wordle\\obj\\",
+      "projectPath": "F:\\ITB\\DAMv1\\M3\\GitLab\\3\\ProjecteTroncal_Wordle\\Wordle\\Wordle.csproj",
+      "packagesPath": "C:\\Users\\argo\\.nuget\\packages\\",
+      "outputPath": "F:\\ITB\\DAMv1\\M3\\GitLab\\3\\ProjecteTroncal_Wordle\\Wordle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\VireN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\argo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -59,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }
