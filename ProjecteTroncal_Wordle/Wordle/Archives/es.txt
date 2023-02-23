@@ -1,0 +1,11 @@
+Desea jugar? (S/N)
+Solo S/s o N/n.
+Adios.
+angel almas artic atomo audio calma canto civil delta dogma dolor licor local octal orbes
+Escribe una palabra: 
+Te has equivocado con el tamaño de la palabra.
+Respuesta correcta: 
+Introduce tu usuario: 
+Se ha guardado tu partida con tu resultado.
+Perdida 
+Ganada

@@ -1,0 +1,11 @@
+0. Salir / Exit
+1. Idioma / Language
+2. Historial / History
+Idioma / Language (en/es/cat): 
+Error 404 No se ha encontrado / Not Found
+Partida guardada / Game Saved: 
+Usario / Usuari / User: 
+Palabra aleatoria / Paraula aleatoria / Random Word: 
+Idioma / Language : 
+Estado / Estat / Status: 
+ENTER
