@@ -105,8 +105,9 @@ namespace Wordle
                 Console.WriteLine(configLines[9] + fileContent[3]);
                 partidasNum++;
             }
-            Console.WriteLine(configLines[10]);
+            Console.WriteLine("\n\n" + configLines[10]);
             Console.ReadLine();
+            Console.Clear();
             Main();
         }
 
