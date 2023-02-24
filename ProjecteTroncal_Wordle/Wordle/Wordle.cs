@@ -7,7 +7,6 @@
 
 using System;
 using System.IO;
-using System.Threading;
 
 namespace Wordle
 {
@@ -136,7 +135,6 @@ namespace Wordle
                 Start(file, lang);
             }
             Console.WriteLine(file[2]);
-            Thread.Sleep(3000);
             Main();
         }
 
