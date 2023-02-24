@@ -148,8 +148,12 @@ namespace Wordle
             Console.WriteLine(file[7]);
             string username = Console.ReadLine();
 
+            StreamReader sr = File.OpenText(file[3]);
+            string st = sr.ReadToEnd();
+            sr.Close();
+
             // Array de paraules
-            string[] words = file[3].Split(new char[] { '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] words = st.Split(new char[] { '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Generem un numero aleatori i guardem la paraula a la que correspon aquest numero per poder comparar durant el joc.
             Random rnd = new Random();

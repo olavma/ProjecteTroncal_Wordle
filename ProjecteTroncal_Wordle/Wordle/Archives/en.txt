@@ -1,7 +1,7 @@
 Do you want to play? (Y/N)
 Just Y/y or N/n.
 Goodbye
-angel souls artic atoms audio calms songs civil deltas dogma pains locals liqor octal orbis
+..\..\..\Archives\en_word.txt
 Write a word: 
 You have made a mistake with the size of the word.
 Correct answer: 

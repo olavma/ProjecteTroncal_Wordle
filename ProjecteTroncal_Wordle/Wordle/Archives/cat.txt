@@ -1,7 +1,7 @@
 Desitja jugar? (S/N)
 Sols S/s o N/n
 Adeu
-angel anima artic atoms audio camio cants civil decim delta digit dogma dolor gelat inici liceu licor local octal ocult orbes
+..\..\..\Archives\cat_word.txt
 Escriu una paraula: 
 T'has equivocat amb el tamany de la paraula
 Resposta correcta: 
