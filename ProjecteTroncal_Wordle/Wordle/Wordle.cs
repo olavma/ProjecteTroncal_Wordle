@@ -149,17 +149,8 @@ namespace Wordle
             Console.WriteLine(file[7]);
             string username = Console.ReadLine();
 
-            StreamReader sr = File.OpenText(file[3]);
-            string st = sr.ReadToEnd();
-            sr.Close();
-
-            // Array de paraules
-            string[] words = st.Split(new char[] { '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            // Generem un numero aleatori i guardem la paraula a la que correspon aquest numero per poder comparar durant el joc.
-            Random rnd = new Random();
-            int rnum = rnd.Next(0, words.Length);
-            string word = words[rnum];
+            // Guardem la palabra aleatoria en una variable
+            string word = ChoosenWord(file[3]);
 
             // Creem la matriu del wordle
             string[,] wordle = new string[6, 5];
@@ -178,6 +169,26 @@ namespace Wordle
             // Comença la interaccio amb l'usuari
             Play(wordle, word, file, username, lang);
             Console.Read();
+        }
+
+        /// <summary>
+        /// Funció que llegeix un fitxer amb paraules.
+        /// </summary>
+        /// <param name="file">Linea del fitxer d'idioma que indica on estan les paraules guardades</param>
+        /// <returns>Una palabra aleatorio de totes les del fitxer de paraules</returns>
+        string ChoosenWord(string file)
+        {
+            StreamReader sr = File.OpenText(file);
+            string st = sr.ReadToEnd();
+            sr.Close();
+
+            // Array de paraules
+            string[] words = st.Split(new char[] { '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Generem un numero aleatori i guardem la paraula a la que correspon aquest numero per poder comparar durant el joc.
+            Random rnd = new Random();
+            int rnum = rnd.Next(0, words.Length);
+            return words[rnum];
         }
 
         /// <summary>
