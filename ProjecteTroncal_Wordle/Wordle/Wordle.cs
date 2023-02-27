@@ -97,12 +97,22 @@ namespace Wordle
 
                 string content = File.ReadAllText(file);
 
-                string[] fileContent = content.Split(';');
+                string[] fileContent = content.Split(new char[] { ';', '\n', '\r'});
 
                 Console.WriteLine(configLines[6] + fileContent[0]);
                 Console.WriteLine(configLines[7] + fileContent[1]);
                 Console.WriteLine(configLines[8] + fileContent[2]);
-                Console.WriteLine(configLines[9] + fileContent[3]);
+                Console.Write(configLines[9]);
+                if (fileContent[4] == "1")
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                Console.Write(fileContent[3]+"\n");
+                Console.ResetColor();
                 partidasNum++;
             }
             Console.WriteLine("\n\n" + configLines[10]);
@@ -241,7 +251,7 @@ namespace Wordle
                 Console.Write(file[4]);
                 wordUser = Console.ReadLine();
             }
-
+            
             // Guarda el contingut en una linea de la matriu de Wordle
             for (int j = 0; j < wordle.GetLength(1); j++)
             {
@@ -279,16 +289,18 @@ namespace Wordle
         void Save(string username, string word, bool win, string[] file, string lang)
         {
             string status = file[9];
+            int statusInt = 0;
             if (win)
             {
                 status = file[10];
+                statusInt = 1;
             }
             string path = @"..\..\..\Archives\Partidas\";
             DateTime now = DateTime.Now;
             string dateStr = now.ToString("yyyyMMdd_HHmmss");
             using (StreamWriter sw = File.AppendText(path + dateStr + "_" + username + ".txt"))
             {
-                sw.WriteLine($"{username};{word};{lang};{status}");
+                sw.WriteLine($"{username};{word};{lang};{status};{statusInt}");
             }
             Console.WriteLine(file[8]);
         }

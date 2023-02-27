@@ -7,5 +7,5 @@ You have made a mistake with the size of the word.
 Correct answer: 
 Enter your username: 
 Your game has been saved with your result.
-Lost 
+Lost
 Victory

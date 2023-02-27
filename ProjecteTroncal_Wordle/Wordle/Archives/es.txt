@@ -7,5 +7,5 @@ Te has equivocado con el tamaño de la palabra.
 Respuesta correcta: 
 Introduce tu usuario: 
 Se ha guardado tu partida con tu resultado.
-Perdida 
+Perdida
 Ganada
