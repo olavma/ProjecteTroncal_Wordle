@@ -331,7 +331,7 @@ namespace Wordle
                         {
                             if (Convert.ToChar(wordle[rowShow, colShow]) != word[k])
                             {
-                                Console.ForegroundColor = ConsoleColor.DarkGray;
+                                IsDarkGray(wordle, rowShow, colShow, word);
                             }
                         }
                         /* Despres es comprova si alguna lletra de la paraula de l'usuari existeix en la paraula aleatoria pero es troba en un altre lloc.
@@ -341,7 +341,7 @@ namespace Wordle
                         {
                             if (Convert.ToChar(wordle[rowShow, colShow]) == word[k])
                             {
-                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                IsYellow(wordle, rowShow, colShow, word);
                             }
                         }
 
