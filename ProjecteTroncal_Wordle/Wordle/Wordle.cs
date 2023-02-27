@@ -79,7 +79,7 @@ namespace Wordle
         /// <summary>
         /// Muestra el historico de las partidas sin tener en cuenta el usuario que quiere acceder
         /// </summary>
-        /// <param name="configLines"></param>
+        /// <param name="configLines">Lineas del fichero de configuracion</param>
         void History(string[] configLines)
         {
             Console.Clear();
