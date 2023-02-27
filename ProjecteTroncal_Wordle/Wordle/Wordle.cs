@@ -17,22 +17,23 @@ namespace Wordle
         /// </summary>
         static void Main()
         {
+            var ex = new Wordle();
+
             StreamReader sr = File.OpenText(@"..\..\..\Archives\config.txt");
             string st = sr.ReadToEnd();
             sr.Close();
 
             string[] configLines = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-
-            var ex = new Wordle();
             ex.Menu(configLines);
         }
 
         void Menu(string[] configLines)
         {
-            Console.WriteLine(configLines[0]);
-            Console.WriteLine(configLines[1]);
-            Console.WriteLine(configLines[2]);
+            for(int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(configLines[i]);
+            }
             Console.Write("> ");
             string option = Console.ReadLine();
             switch (option)
@@ -73,7 +74,7 @@ namespace Wordle
                     string[] file = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                     WannaPlay(file, lang);
                 }
-                // Si no nos saldra un error
+                // Si no, nos saldra un error
                 else
                 {
                     Console.WriteLine(configLines[4] + "\n");
