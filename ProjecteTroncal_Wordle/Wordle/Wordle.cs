@@ -33,6 +33,7 @@ namespace Wordle
             Console.WriteLine(configLines[0]);
             Console.WriteLine(configLines[1]);
             Console.WriteLine(configLines[2]);
+            Console.Write("> ");
             string option = Console.ReadLine();
             switch (option)
             {
