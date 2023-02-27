@@ -1,7 +1,7 @@
 Desea jugar? (S/N)
 Solo S/s o N/n.
 Adios.
-..\..\..\Archives\es_word.txt
+..\..\..\Archives\Palabras\es_word.txt
 Escribe una palabra: 
 Te has equivocado con el tamaño de la palabra.
 Respuesta correcta: 

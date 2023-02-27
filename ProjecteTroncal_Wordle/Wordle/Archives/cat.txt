@@ -1,7 +1,7 @@
 Desitja jugar? (S/N)
 Sols S/s o N/n
 Adeu
-..\..\..\Archives\cat_word.txt
+..\..\..\Archives\Palabras\cat_word.txt
 Escriu una paraula: 
 T'has equivocat amb el tamany de la paraula
 Resposta correcta: 
