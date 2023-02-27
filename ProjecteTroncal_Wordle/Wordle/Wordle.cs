@@ -361,7 +361,7 @@ namespace Wordle
         /// <param name="i">Fila en la que estamos</param>
         /// <param name="j">Columna en la que estamos</param>
         /// <param name="lettersGreen">Contador de las letras pintadas de verde</param>
-        /// <returns></returns>
+        /// <returns>Devuelve el numero de letras en verde más 1</returns>
         int PaintGreen(string[,] wordle, int i, int j, int lettersGreen)
         {
             Green(wordle, i, j);
