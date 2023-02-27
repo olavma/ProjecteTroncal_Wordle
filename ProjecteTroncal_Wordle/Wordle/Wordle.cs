@@ -25,6 +25,11 @@ namespace Wordle
 
 
             var ex = new Wordle();
+            ex.Menu(configLines);
+        }
+
+        void Menu(string[] configLines)
+        {
             Console.WriteLine(configLines[0]);
             Console.WriteLine(configLines[1]);
             Console.WriteLine(configLines[2]);
@@ -32,10 +37,10 @@ namespace Wordle
             switch (option)
             {
                 case "1":
-                    ex.Language(configLines);
+                    Language(configLines);
                     break;
                 case "2":
-                    ex.History(configLines);
+                    History(configLines);
                     break;
                 case "0":
                     Environment.Exit(0);
@@ -103,14 +108,11 @@ namespace Wordle
                 Console.WriteLine(configLines[7] + fileContent[1]);
                 Console.WriteLine(configLines[8] + fileContent[2]);
                 Console.Write(configLines[9]);
-                if (fileContent[4] == "1")
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
+
+                // Comprobamos el statusInt, un numero que determina si ha sido victoria o no para cambiar de color la palabra
+                if (fileContent[4] == "1") Console.ForegroundColor = ConsoleColor.Green;
+                else Console.ForegroundColor = ConsoleColor.Red;
+
                 Console.Write(fileContent[3]+"\n");
                 Console.ResetColor();
                 partidasNum++;
