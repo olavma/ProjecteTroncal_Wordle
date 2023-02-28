@@ -10,7 +10,7 @@
 using System;
 using System.IO;
 
-namespace Wordle
+namespace Wordle_Olav
 {
     public class WordleGame
     {
