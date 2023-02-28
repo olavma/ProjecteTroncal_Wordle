@@ -29,7 +29,7 @@ namespace TestUnitario
             matrix[0, 2] = "b";
             matrix[0, 3] = "o";
             matrix[0, 4] = "l";
-            Assert.AreEqual(2, WordleGame.PaintGreen(matrix, 0, 2, 1));
+            Assert.AreEqual(2, Wordle_Olav.Wordle_Olav.PaintGreen(matrix, 0, 2, 1));
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace TestUnitario
             matrix[0, 2] = "b";
             matrix[0, 3] = "o";
             matrix[0, 4] = "l";
-            Assert.AreEqual(5, WordleGame.PaintGreen(matrix, 0, 2, 5));
+            Assert.AreEqual(5, Wordle_Olav.Wordle_Olav.PaintGreen(matrix, 0, 2, 5));
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace TestUnitario
             matrix[0, 2] = "b";
             matrix[0, 3] = "o";
             matrix[0, 4] = "l";
-            Assert.AreNotEqual(6, WordleGame.PaintGreen(matrix, 0, 2, 5));
+            Assert.AreNotEqual(6, Wordle_Olav.Wordle_Olav.PaintGreen(matrix, 0, 2, 5));
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace TestUnitario
         public void ChoosenWord()
         {
             string[] array = { "almas", "bueno", "adios" };
-            Assert.AreEqual("almas", WordleGame.ChoosenWord(array, 0));
+            Assert.AreEqual("almas", Wordle_Olav.Wordle_Olav.ChoosenWord(array, 0));
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace TestUnitario
         public void NotChoosenWord()
         {
             string[] array = { "almas", "bueno", "adios" };
-            Assert.AreNotEqual("almas", WordleGame.ChoosenWord(array, 1));
+            Assert.AreNotEqual("almas", Wordle_Olav.Wordle_Olav.ChoosenWord(array, 1));
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace TestUnitario
         public void WordFile()
         {
             string[] array = { "almas", "bueno", "adios" };
-            Assert.AreEqual(array, WordleGame.WordFile(@"..\..\..\TestFiles\wordfile1.txt"));
+            Assert.AreEqual(array, Wordle_Olav.Wordle_Olav.WordFile(@"..\..\..\TestFiles\wordfile1.txt"));
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace TestUnitario
         public void IncorrectWordFile()
         {
             string[] array = { "almas", "bueno", "adios" };
-            Assert.AreNotEqual(array, WordleGame.WordFile(@"..\..\..\TestFiles\wordfile2.txt"));
+            Assert.AreNotEqual(array, Wordle_Olav.Wordle_Olav.WordFile(@"..\..\..\TestFiles\wordfile2.txt"));
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace TestUnitario
             sr.Close();
 
             string[] test = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Assert.AreEqual(expected, WordleGame.UserInteraction(matrix, 1, test, "almas"));
+            Assert.AreEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 1, test, "almas"));
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace TestUnitario
             sr.Close();
 
             string[] test = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Assert.AreNotEqual(expected, WordleGame.UserInteraction(matrix, 1, test, "almes"));
+            Assert.AreNotEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 1, test, "almes"));
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace TestUnitario
             sr.Close();
 
             string[] test = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Assert.AreEqual(expected, WordleGame.UserInteraction(matrix, 0, test, "almas"));
+            Assert.AreEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 0, test, "almas"));
         }
     }
 }

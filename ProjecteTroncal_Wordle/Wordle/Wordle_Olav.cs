@@ -13,14 +13,14 @@ using System.IO;
 
 namespace Wordle_Olav
 {
-    public class WordleGame
+    public class Wordle_Olav
     {
         /// <summary>
         /// Mostramos el menu principal que esta dentro del config.txt
         /// </summary>
         static void Main()
         {
-            var ex = new WordleGame();
+            var ex = new Wordle_Olav();
             StreamReader sr = File.OpenText(@"..\..\..\Archives\config.txt");
             string st = sr.ReadToEnd();
             sr.Close();
