@@ -1,0 +1,11 @@
+Desea jugar? (S/N)
+Solo S/s o N/n.
+Adios. Pulse cualquier tecla para continuar.
+..\..\..\Archives\Palabras\es_word.txt
+Escribe una palabra: 
+Te has equivocado con el tamaño de la palabra.
+Respuesta correcta: 
+Introduce tu usuario: 
+Se ha guardado tu partida con tu resultado.
+Perdida
+Ganada

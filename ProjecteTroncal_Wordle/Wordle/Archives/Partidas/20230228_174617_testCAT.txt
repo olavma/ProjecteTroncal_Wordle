@@ -1,0 +1,2 @@
+testCAT;micro;cat;Perduda;0;6
+necro;necro;cromo;mimos;micra;micru

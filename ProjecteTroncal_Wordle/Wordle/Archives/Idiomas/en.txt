@@ -1,0 +1,11 @@
+Do you want to play? (Y/N)
+Just Y/y or N/n.
+Goodbye. Press any key to continue.
+..\..\..\Archives\Palabras\en_word.txt
+Write a word: 
+You have made a mistake with the size of the word.
+Correct answer: 
+Enter your username: 
+Your game has been saved with your result.
+Lost
+Victory

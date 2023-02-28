@@ -1,0 +1,2 @@
+testES;altas;es;Ganada;1;0
+altas

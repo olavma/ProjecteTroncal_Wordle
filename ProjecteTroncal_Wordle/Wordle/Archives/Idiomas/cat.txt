@@ -1,0 +1,11 @@
+Desitja jugar? (S/N)
+Sols S/s o N/n
+Adeu. Premeu qualsevol tecla per continuar
+..\..\..\Archives\Palabras\cat_word.txt
+Escriu una paraula: 
+T'has equivocat amb el tamany de la paraula
+Resposta correcta: 
+Introdueix el teu usuari
+S'ha guardat la teva partida amb el teu resultat
+Perduda
+Guanayada
