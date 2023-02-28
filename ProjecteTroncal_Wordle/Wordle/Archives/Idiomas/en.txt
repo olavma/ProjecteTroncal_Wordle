@@ -1,6 +1,6 @@
 Do you want to play? (Y/N)
 Just Y/y or N/n.
-Goodbye
+Goodbye. Press any key to continue.
 ..\..\..\Archives\Palabras\en_word.txt
 Write a word: 
 You have made a mistake with the size of the word.

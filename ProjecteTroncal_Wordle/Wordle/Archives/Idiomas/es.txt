@@ -1,6 +1,6 @@
 Desea jugar? (S/N)
 Solo S/s o N/n.
-Adios.
+Adios. Pulse cualquier tecla para continuar.
 ..\..\..\Archives\Palabras\es_word.txt
 Escribe una palabra: 
 Te has equivocado con el tamaño de la palabra.

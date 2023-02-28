@@ -1,6 +1,6 @@
 Desitja jugar? (S/N)
 Sols S/s o N/n
-Adeu
+Adeu. Premeu qualsevol tecla per continuar
 ..\..\..\Archives\Palabras\cat_word.txt
 Escriu una paraula: 
 T'has equivocat amb el tamany de la paraula

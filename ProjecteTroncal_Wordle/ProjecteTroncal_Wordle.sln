@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordle", "Wordle\Wordle.csproj", "{71EF5638-2039-454B-87C0-0B54CD196DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wordle", "Wordle\Wordle.csproj", "{71EF5638-2039-454B-87C0-0B54CD196DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitario", "TestUnitario\TestUnitario.csproj", "{31C476CF-8C47-4107-88FB-6A76D15CA52D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{71EF5638-2039-454B-87C0-0B54CD196DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71EF5638-2039-454B-87C0-0B54CD196DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71EF5638-2039-454B-87C0-0B54CD196DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C476CF-8C47-4107-88FB-6A76D15CA52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C476CF-8C47-4107-88FB-6A76D15CA52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C476CF-8C47-4107-88FB-6A76D15CA52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C476CF-8C47-4107-88FB-6A76D15CA52D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

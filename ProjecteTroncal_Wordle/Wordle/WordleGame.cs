@@ -1,6 +1,8 @@
 ﻿/*
  * AUTHOR: Olav Martos Aceña
- * DATE: 29/11/2022
+ * DATE: 29/11/2022 - UF1
+ * DATE: 21/02/2023 - UF2
+ * DATE: 23/02/2023 - UF3
  * DESCRIPTION: Es tracta de fer una solució que ens permeti jugar al joc Wordle.
  *      Com encara estem als inicis del curs i gairebé no heu treballat interfícies d'usuari, el joc funcionarà a través de la terminal. 
  */
@@ -10,14 +12,14 @@ using System.IO;
 
 namespace Wordle
 {
-    class Wordle
+    public class WordleGame
     {
         /// <summary>
         /// Mostramos el menu principal que esta dentro del config.txt
         /// </summary>
         static void Main()
         {
-            var ex = new Wordle();
+            var ex = new WordleGame();
             StreamReader sr = File.OpenText(@"..\..\..\Archives\config.txt");
             string st = sr.ReadToEnd();
             sr.Close();
@@ -143,6 +145,8 @@ namespace Wordle
                 Start(file, lang);
             }
             Console.WriteLine(file[2]);
+            Console.ReadLine();
+            Console.Clear();
             Main();
         }
 
@@ -155,7 +159,14 @@ namespace Wordle
         {
             Console.WriteLine(file[7]);
             string username = Console.ReadLine();
-            string word = ChoosenWord(file[3]);
+
+
+            string[] words = WordFile(file[3]);
+            Random rnd = new Random();
+            int rnum = rnd.Next(0, words.Length);
+            string word = ChoosenWord(words, rnum);;
+
+
             string[,] wordle = new string[6, 5];
 
             for (int i = 0; i < wordle.GetLength(0); i++)
@@ -170,20 +181,30 @@ namespace Wordle
         }
 
         /// <summary>
-        /// Funció que llegeix un fitxer amb paraules.
+        /// Crea una array de strings que contiene todas las palabras del idioma seleccionado por el usuario
         /// </summary>
         /// <param name="file">Linea del fitxer d'idioma que indica on estan les paraules guardades</param>
-        /// <returns>Una palabra aleatorio de totes les del fitxer de paraules</returns>
-        string ChoosenWord(string file)
+        /// <returns>L'array de string</returns>
+        public static string[] WordFile(string file)
         {
             StreamReader sr = File.OpenText(file);
             string st = sr.ReadToEnd();
             sr.Close();
 
-            string[] words = st.Split(new char[] { '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            Random rnd = new Random();
-            int rnum = rnd.Next(0, words.Length);
-            return words[rnum];
+            string[] words = st.Split(new char[] { '\n', ' ', '\r', ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+            return words;
+        }
+
+        /// <summary>
+        /// Funció que retorna la una paraula aleatoria
+        /// </summary>
+        /// <param name="words">Llista de paraules</param>
+        /// <param name="rnum">Numero aleatoria</param>
+        /// <returns>Una paraula aleatoria de totes les del fitxer de paraules</returns>
+        public static string ChoosenWord(string[] words, int rnum) 
+        { 
+            return words[rnum]; 
         }
 
         /// <summary>
@@ -198,7 +219,10 @@ namespace Wordle
         {
             for (int i = 0; i < wordle.GetLength(0); i++)
             {
-                UserInteraction(wordle, i, file);
+                Console.Write(file[4]);
+                string wordUser = Console.ReadLine();
+
+                UserInteraction(wordle, i, file, wordUser);
                 int lettersGreen = 0;
                 Comprovaciones(wordle, i, lettersGreen, word, file, username, lang);
                 Console.Clear();
@@ -213,12 +237,10 @@ namespace Wordle
         /// <param name="wordle">Matriz del Wordle</param>
         /// <param name="i">Iterador que indica en que linia del Wordle tiene que escribir</param>
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
+        /// <param name="wordUser">Palabra escrita por el usuario</param>
         /// <returns>Devuelve la matriz del Wordle</returns>
-        string[,] UserInteraction(string[,] wordle, int i, string[] file)
+        public static string[,] UserInteraction(string[,] wordle, int i, string[] file, string wordUser)
         {
-            Console.Write(file[4]);
-            string wordUser = Console.ReadLine();
-
             while (wordUser.Length != 5)
             {
                 Console.WriteLine(file[5]);
@@ -313,7 +335,7 @@ namespace Wordle
         /// <param name="wordle">Wordle</param>
         /// <param name="i">Fila en la que se encuentra</param>
         /// <param name="j">Columna en la que se encuentra</param>
-        void Green(string[,] wordle, int i, int j)
+        public static void Green(string[,] wordle, int i, int j)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(" " + wordle[i, j]);
@@ -327,10 +349,11 @@ namespace Wordle
         /// <param name="j">Columna en la que estamos</param>
         /// <param name="lettersGreen">Contador de las letras pintadas de verde</param>
         /// <returns>Devuelve el numero de letras en verde más 1</returns>
-        int PaintGreen(string[,] wordle, int i, int j, int lettersGreen)
+        public static int PaintGreen(string[,] wordle, int i, int j, int lettersGreen)
         {
             Green(wordle, i, j);
-            return (lettersGreen + 1);
+            if(lettersGreen+1 > 5) return lettersGreen;
+            else return (lettersGreen + 1);
         }
 
         /// <summary>
