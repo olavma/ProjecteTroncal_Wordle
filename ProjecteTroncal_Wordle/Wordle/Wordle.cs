@@ -52,14 +52,12 @@ namespace Wordle
         /// <param name="configLines">Lineas del contenido del fichero config.txt</param>
         void Language(string[] configLines)
         {
-            string path = @"..\..\..\Archives\Lang\";
+            string path = @"..\..\..\Archives\Idiomas\";
             Console.Write(configLines[3]);
             string lang = Console.ReadLine();
 
             while (true)
             {
-                Directory.SetCurrentDirectory(path + lang + ".txt");
-                Console.WriteLine(Directory.GetCurrentDirectory());
                 // Si existe la ruta con el idioma se iniciara el juego.
                 if (File.Exists(path + lang + ".txt"))
                 {
