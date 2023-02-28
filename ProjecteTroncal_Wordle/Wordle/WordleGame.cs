@@ -8,6 +8,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Wordle_Olav
@@ -91,7 +92,7 @@ namespace Wordle_Olav
             int partidasNum = 1;
 
             // Mostramos una leyenda para los intentos mostrados en el historico
-            for(int i=12; i < configLines.Length; i++) Console.WriteLine(configLines[i]);
+            for(int i=13; i < configLines.Length; i++) Console.WriteLine(configLines[i]);
 
             // Creamos un bucle para ir recorriendo la lista de los archivos
             foreach (string file in fileNames)
@@ -104,6 +105,14 @@ namespace Wordle_Olav
 
                 string[] fileContent = content.Split(new char[] { ';', '\n', '\r'});
 
+                List<string> oldWordle = new List<string>();
+                for(int i = 6; i < fileContent.Length; i++)
+                {
+                    oldWordle.Add(fileContent[i]);
+                }
+
+                // Mostramos el usuario de la partida, la palabra aleatoria, el idioma, si ha ganado o ha perdido, el numero de intentos
+                // Y el Wordle de esa partida, sin colores.
                 Console.WriteLine(configLines[6] + fileContent[0]);
                 Console.WriteLine(configLines[7] + fileContent[1]);
                 Console.WriteLine(configLines[8] + fileContent[2]);
@@ -115,10 +124,19 @@ namespace Wordle_Olav
 
                 Console.Write(fileContent[3]+"\n");
                 Console.ResetColor();
+
+                //Numero de intentos
                 Console.WriteLine(configLines[10] + fileContent[5]+ "/" + 6);
+
+                // Wordle de esa partida
+                Console.WriteLine(configLines[11]);
+                foreach (string oldLine in oldWordle)
+                {
+                    Console.WriteLine(oldLine);
+                }
                 partidasNum++;
             }
-            Console.WriteLine("\n\n" + configLines[11]);
+            Console.WriteLine("\n\n" + configLines[12]);
             Console.ReadLine();
             Console.Clear();
             Main();
@@ -178,7 +196,9 @@ namespace Wordle_Olav
                 for (int j = 0; j < wordle.GetLength(1); j++) wordle[i, j] = " ";
             }
 
-            Console.WriteLine(word);
+            // Mostramos la palabra aleatoria para hacer las pruebas
+            //Console.WriteLine(word);
+
             Console.ForegroundColor = ConsoleColor.White;
             Play(wordle, word, file, username, lang);
             Console.Read();
@@ -221,18 +241,20 @@ namespace Wordle_Olav
         /// <param name="lang">Idioma escogido</param>
         void Play(string[,] wordle, string word, string[] file, string username, string lang)
         {
+            List<string> userWords = new List<string>();
             for (int i = 0; i < wordle.GetLength(0); i++)
             {
                 Console.Write(file[4]);
                 string wordUser = Console.ReadLine();
 
                 UserInteraction(wordle, i, file, wordUser);
+                userWords.Add(wordUser);
                 int lettersGreen = 0;
-                Comprovaciones(wordle, i, lettersGreen, word, file, username, lang);
+                Comprovaciones(wordle, i, lettersGreen, word, file, username, lang, userWords);
                 Console.Clear();
                 Matrix(word, wordle);
             }
-            EndGame(word, file, username, lang, 6);
+            EndGame(word, file, username, lang, 6, userWords);
         }
 
         /// <summary>
@@ -263,14 +285,14 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="username">Nombre del usuario</param>
         /// <param name="lang">Idioma escogido</param>
-        void EndGame(string word, string[] file, string username, string lang, int intentos)
+        void EndGame(string word, string[] file, string username, string lang, int intentos, List<string> userWords)
         {
             Console.Write(file[6]);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(word);
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("");
-            Save(username, word, false, file, lang, intentos);
+            Save(username, word, false, file, lang, intentos, userWords);
             WannaPlay(file, lang);
         }
 
@@ -282,7 +304,7 @@ namespace Wordle_Olav
         /// <param name="win">Si se ha ganado o no</param>
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="lang">Idioma escogido</param>
-        void Save(string username, string word, bool win, string[] file, string lang, int intentos)
+        void Save(string username, string word, bool win, string[] file, string lang, int intentos, List<string> userWords)
         {
             string status = file[9];
             int statusInt = 0;
@@ -297,6 +319,11 @@ namespace Wordle_Olav
             using (StreamWriter sw = File.AppendText(path + dateStr + "_" + username + ".txt"))
             {
                 sw.WriteLine($"{username};{word};{lang};{status};{statusInt};{intentos}");
+                for(int i = 0; i < userWords.Count; i++)
+                {
+                    if(i==(userWords.Count - 1)) sw.Write(userWords[i]);
+                    else sw.Write(userWords[i] + ";");
+                }
             }
             Console.WriteLine(file[8]);
         }
@@ -404,7 +431,7 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="username">Nombre del usuario</param>
         /// <param name="lang">Idioma escogido</param>
-        void Victory(string[,] wordle, string word, string[] file, string username, string lang, int intentos)
+        void Victory(string[,] wordle, string word, string[] file, string username, string lang, int intentos, List<string> userWords)
         {
             Console.Clear();
 
@@ -426,7 +453,7 @@ namespace Wordle_Olav
             }
 
             Console.ForegroundColor = ConsoleColor.White;
-            Save(username, word, true, file, lang, intentos);
+            Save(username, word, true, file, lang, intentos, userWords);
             WannaPlay(file, lang);
         }
 
@@ -440,7 +467,7 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="lang">Idioma escogido</param>
         /// <param name="username">Nombre del usuario</param>
-        void Comprovaciones(string[,] wordle, int i, int lettersGreen, string word, string[] file, string username, string lang)
+        void Comprovaciones(string[,] wordle, int i, int lettersGreen, string word, string[] file, string username, string lang, List<string> userWords)
         {
             for (int j = 0; j < wordle.GetLength(1); j++)
             {
@@ -452,7 +479,7 @@ namespace Wordle_Olav
                     Console.ForegroundColor = ConsoleColor.White;
                 }
 
-                if (lettersGreen == 5) Victory(wordle, word, file, username, lang, i);
+                if (lettersGreen == 5) Victory(wordle, word, file, username, lang, i, userWords);
             }
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();

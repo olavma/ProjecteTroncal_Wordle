@@ -9,6 +9,7 @@ Palabra aleatoria / Paraula aleatoria / Random Word:
 Idioma / Language : 
 Estado / Estat / Status: 
 Intentos / Intentos / Tries: 
+Wordle: 
 Pulsa ENTER / Press ENTER
 Intentos 0/6 = A la primera. Intentos 6/6 = Has perdido. Intentos 5/6 = Has ganado por los pelos.
 Intents 0/6 = A la primera. Intents 6/6 = Has perdut. Intents 5/6 = Guanyat pels pels.
