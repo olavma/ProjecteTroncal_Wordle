@@ -90,6 +90,9 @@ namespace Wordle
             string[] fileNames = Directory.GetFiles(folderPath);
             int partidasNum = 1;
 
+            // Mostramos una leyenda para los intentos mostrados en el historico
+            for(int i=12; i < configLines.Length; i++) Console.WriteLine(configLines[i]);
+
             // Creamos un bucle para ir recorriendo la lista de los archivos
             foreach (string file in fileNames)
             {
@@ -112,9 +115,10 @@ namespace Wordle
 
                 Console.Write(fileContent[3]+"\n");
                 Console.ResetColor();
+                Console.WriteLine(configLines[10] + fileContent[5]+ "/" + 6);
                 partidasNum++;
             }
-            Console.WriteLine("\n\n" + configLines[10]);
+            Console.WriteLine("\n\n" + configLines[11]);
             Console.ReadLine();
             Console.Clear();
             Main();
@@ -228,7 +232,7 @@ namespace Wordle
                 Console.Clear();
                 Matrix(word, wordle);
             }
-            EndGame(word, file, username, lang);
+            EndGame(word, file, username, lang, 6);
         }
 
         /// <summary>
@@ -259,14 +263,14 @@ namespace Wordle
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="username">Nombre del usuario</param>
         /// <param name="lang">Idioma escogido</param>
-        void EndGame(string word, string[] file, string username, string lang)
+        void EndGame(string word, string[] file, string username, string lang, int intentos)
         {
             Console.Write(file[6]);
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(word);
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("");
-            Save(username, word, false, file, lang);
+            Save(username, word, false, file, lang, intentos);
             WannaPlay(file, lang);
         }
 
@@ -278,7 +282,7 @@ namespace Wordle
         /// <param name="win">Si se ha ganado o no</param>
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="lang">Idioma escogido</param>
-        void Save(string username, string word, bool win, string[] file, string lang)
+        void Save(string username, string word, bool win, string[] file, string lang, int intentos)
         {
             string status = file[9];
             int statusInt = 0;
@@ -292,7 +296,7 @@ namespace Wordle
             string dateStr = now.ToString("yyyyMMdd_HHmmss");
             using (StreamWriter sw = File.AppendText(path + dateStr + "_" + username + ".txt"))
             {
-                sw.WriteLine($"{username};{word};{lang};{status};{statusInt}");
+                sw.WriteLine($"{username};{word};{lang};{status};{statusInt};{intentos}");
             }
             Console.WriteLine(file[8]);
         }
@@ -400,7 +404,7 @@ namespace Wordle
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="username">Nombre del usuario</param>
         /// <param name="lang">Idioma escogido</param>
-        void Victory(string[,] wordle, string word, string[] file, string username, string lang)
+        void Victory(string[,] wordle, string word, string[] file, string username, string lang, int intentos)
         {
             Console.Clear();
 
@@ -422,7 +426,7 @@ namespace Wordle
             }
 
             Console.ForegroundColor = ConsoleColor.White;
-            Save(username, word, true, file, lang);
+            Save(username, word, true, file, lang, intentos);
             WannaPlay(file, lang);
         }
 
@@ -448,7 +452,7 @@ namespace Wordle
                     Console.ForegroundColor = ConsoleColor.White;
                 }
 
-                if (lettersGreen == 5) Victory(wordle, word, file, username, lang);
+                if (lettersGreen == 5) Victory(wordle, word, file, username, lang, i);
             }
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
