@@ -285,6 +285,8 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="username">Nombre del usuario</param>
         /// <param name="lang">Idioma escogido</param>
+        /// <param name="intentos">Numero de intentos</param>
+        /// <param name="userWords">Lista de palabras escritas por el usuario</param>
         void EndGame(string word, string[] file, string username, string lang, int intentos, List<string> userWords)
         {
             Console.Write(file[6]);
@@ -304,6 +306,8 @@ namespace Wordle_Olav
         /// <param name="win">Si se ha ganado o no</param>
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="lang">Idioma escogido</param>
+        /// <param name="intentos">Numero de intentos</param>
+        /// <param name="userWords">Lista con todas las palabras del usuario</param>
         void Save(string username, string word, bool win, string[] file, string lang, int intentos, List<string> userWords)
         {
             string status = file[9];
@@ -431,6 +435,8 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="username">Nombre del usuario</param>
         /// <param name="lang">Idioma escogido</param>
+        /// <param name="userWords">Lista de palabras escritas por el usuario</param>
+        /// <param name="intentos">Numero de intentos que le ha costado</param>
         void Victory(string[,] wordle, string word, string[] file, string username, string lang, int intentos, List<string> userWords)
         {
             Console.Clear();
@@ -467,6 +473,7 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="lang">Idioma escogido</param>
         /// <param name="username">Nombre del usuario</param>
+        /// <param name="userWords">Lista de todas las palabras escritas por el usuario</param>
         void Comprovaciones(string[,] wordle, int i, int lettersGreen, string word, string[] file, string username, string lang, List<string> userWords)
         {
             for (int j = 0; j < wordle.GetLength(1); j++)
