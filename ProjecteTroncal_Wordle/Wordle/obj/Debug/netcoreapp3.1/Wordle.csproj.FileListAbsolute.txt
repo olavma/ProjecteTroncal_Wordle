@@ -96,3 +96,17 @@ F:\ITB\DAMv1\M3\GitLab\4\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\W
 F:\ITB\DAMv1\M3\GitLab\4\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.dll
 F:\ITB\DAMv1\M3\GitLab\4\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.pdb
 F:\ITB\DAMv1\M3\GitLab\4\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.genruntimeconfig.cache
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.exe
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.deps.json
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.runtimeconfig.json
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.runtimeconfig.dev.json
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.dll
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\bin\Debug\netcoreapp3.1\Wordle.pdb
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.csproj.AssemblyReference.cache
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.AssemblyInfoInputs.cache
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.AssemblyInfo.cs
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.csproj.CoreCompileInputs.cache
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.dll
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.pdb
+C:\Users\VireN\OneDrive\Documentos\GitHub\pt_w\ProjecteTroncal_Wordle\Wordle\obj\Debug\netcoreapp3.1\Wordle.genruntimeconfig.cache

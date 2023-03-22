@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using System.IO;
+using System.Collections.Generic;
 using Wordle_Olav;
 
 namespace TestUnitario
@@ -133,8 +134,10 @@ namespace TestUnitario
             string st = sr.ReadToEnd();
             sr.Close();
 
+            List<string> palabrasUsuario = new List<string>();
+
             string[] test = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Assert.AreEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 1, test, "almas"));
+            Assert.AreEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 1, test, "almas", palabrasUsuario));
         }
 
         /// <summary>
@@ -156,9 +159,9 @@ namespace TestUnitario
             StreamReader sr = File.OpenText(@"..\..\..\..\Wordle\Archives\Idiomas\es.txt");
             string st = sr.ReadToEnd();
             sr.Close();
-
+            List<string> palabrasUsuario = new List<string>();
             string[] test = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Assert.AreNotEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 1, test, "almes"));
+            Assert.AreNotEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 1, test, "almes", palabrasUsuario));
         }
 
         /// <summary>
@@ -180,9 +183,9 @@ namespace TestUnitario
             StreamReader sr = File.OpenText(@"..\..\..\..\Wordle\Archives\Idiomas\es.txt");
             string st = sr.ReadToEnd();
             sr.Close();
-
+            List<string> palabrasUsuario = new List<string>();
             string[] test = st.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            Assert.AreEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 0, test, "almas"));
+            Assert.AreEqual(expected, Wordle_Olav.Wordle_Olav.UserInteraction(matrix, 0, test, "almas", palabrasUsuario));
         }
     }
 }

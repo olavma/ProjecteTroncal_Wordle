@@ -247,8 +247,7 @@ namespace Wordle_Olav
                 Console.Write(file[4]);
                 string wordUser = Console.ReadLine();
 
-                UserInteraction(wordle, i, file, wordUser);
-                userWords.Add(wordUser);
+                UserInteraction(wordle, i, file, wordUser, userWords);
                 int lettersGreen = 0;
                 Comprovaciones(wordle, i, lettersGreen, word, file, username, lang, userWords);
                 Console.Clear();
@@ -265,7 +264,7 @@ namespace Wordle_Olav
         /// <param name="file">Contenido del archivo de idioma seleccionado</param>
         /// <param name="wordUser">Palabra escrita por el usuario</param>
         /// <returns>Devuelve la matriz del Wordle</returns>
-        public static string[,] UserInteraction(string[,] wordle, int i, string[] file, string wordUser)
+        public static string[,] UserInteraction(string[,] wordle, int i, string[] file, string wordUser, List<string> userWords)
         {
             while (wordUser.Length != 5)
             {
@@ -275,6 +274,7 @@ namespace Wordle_Olav
             }
             
             for (int j = 0; j < wordle.GetLength(1); j++) { wordle[i, j] = Convert.ToString(wordUser[j]); }
+            userWords.Add(wordUser);
             return wordle;
         }
 
