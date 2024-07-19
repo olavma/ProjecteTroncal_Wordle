@@ -4,7 +4,7 @@ La fase uno del Proyecto de Wordle consistia en crear una version del popular ju
 
 En la epoca en la que hicimos esta fase, todavia no sabiamos parametrizar, por lo que todo se encontraba metido en la funcion Main()
 
-Para más informacion vea el documento de google: [Proyecto Trocal: Wordle Fase 1](https://docs.google.com/document/d/1AloybXTnDLaIVGlVvzH9BypDNyhS0cdzTFMylKEqmOY/edit?usp=sharing)
+Para más informacion vea el documento de google: [Proyecto Trocal: Wordle Fase 1]([https://docs.google.com/document/d/1AloybXTnDLaIVGlVvzH9BypDNyhS0cdzTFMylKEqmOY/edit?usp=sharing](https://docs.google.com/document/d/11loxXtBZCVuDlw0Wceer-NdCohLb83I2qDA4obwkSmc/edit?usp=sharing))
 
 ## **Fase 2**
 
